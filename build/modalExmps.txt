@@ -1,0 +1,35 @@
+import React, { useState } from "react";
+
+function ModalMenu({setIsOpen, tokenAttrs, changeTokenAttrs, glbStats,tkId}){
+    function editAttr(defaultV,elmtId,isTitle){
+        const elmToken = JSON.parse(JSON.stringify(tokenAttrs));
+        console.log(elmToken);
+        if (isTitle){
+            elmToken[elmtId].attrName = prompt("Insira o novo título do atributo",defaultV)
+        }else{
+            elmToken[elmtId].attrValue = prompt("Insira o novo valor do atributo",defaultV)
+        }   
+        changeTokenAttrs(elmToken);
+        
+    }
+    const attribLines = tokenAttrs.map(x => <tr key={x.attrId}><td onClick={() => {editAttr(x.attrName,x.attrId,true)}}>{x.attrName}</td><td onClick={() => {editAttr(x.attrValue,x.attrId,false)}}>{x.attrValue}</td></tr>);
+    return(
+        <>
+        <div className='modalMenu'>
+            <div className="modal_content">
+                <p className='exitModal' onClick={() => setIsOpen(false)}>Fechar</p>
+                <p className='saveModal' onClick={() => {glbStats.tokens}}>Salvar Dados</p>
+
+                <table className="attrTable">
+                    <tbody>
+                        {attribLines}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        </>
+    );
+}
+
+export default ModalMenu
