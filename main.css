@@ -1,0 +1,364 @@
+/*
+==>Global settings
+*/
+#inputFileLoad, #outputFile{
+    display: none;
+}
+
+
+
+
+
+
+
+/*
+==>Components class settings
+*/
+
+.bttnOpt{
+    width: 100px;
+    cursor: pointer;
+    background:linear-gradient(rgb(34, 32, 32),rgb(101, 97, 97));
+    text-shadow: white 1px 1px;
+    font-weight:bolder;
+}
+
+.bttnOpt::first-letter{
+    color: azure;
+    text-shadow: black 1px 1px;
+}
+
+/*
+==>Containter dos itens
+*/
+.iCardName, .cardDiv span{
+    display: inline-block;
+}
+
+.cardDiv span{
+    display: flow-root;
+    color: red;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+    .modal_content{
+        position: absolute;
+        bottom: 250px;
+        text-align: center;
+        margin: auto;
+        max-width: 420px;
+        height: 60%;
+        border: rgb(53, 48, 48) 2px dashed;
+        box-shadow: rgb(40, 36, 36) 0px 10px 15px;
+        background-color: beige;
+        overflow-y: auto;
+    }
+    div#root{
+        background-color:rgb(49, 49, 49) ;
+        border: solid 1px rgb(27, 25, 25);
+        border-radius: 20px;
+        height: fit-content;
+        width: fit-content;
+        box-shadow: 5px 5px rgb(28, 26, 26);
+        padding: 0px;
+        margin: auto;
+    }
+    #here{
+        color: whitesmoke;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-shadow: black 2px 5px 3px;
+        font-size: small;
+        width: 100px;
+        text-align: center;
+        margin: auto;
+    }
+    #logoElf{
+        display: inline-flex;
+        position: absolute;
+        width: 100px;
+        top: 80px;
+        left: 10%;
+    }
+    body{
+        background-color: rgb(35, 34, 34);
+        cursor:grab;
+        margin: auto;
+        height: 300px;
+        width: 400px;
+        text-align: center;
+    }
+    
+    .cardDiv{
+        margin: 10px;
+        border: white solid 1px;
+        padding: 5px;
+        height: 300px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scrollbar-color: yellow;
+        display: inline-block;
+    }
+    .iCard{
+        border-radius: 10px;
+        border: white solid 0.5px;
+        box-shadow: rgb(0, 0, 0) 10px 10px 10px -10px;
+        width: 100px;
+        height: fit-content;
+        display: inline-block;
+        color: whitesmoke;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url("./assets/fundoNegativo.png");
+        background-size: cover;
+        transition: 0.5s;
+        padding: 3px;
+        margin: 5px;
+    }
+    
+    .iCard:hover{
+        background: url('./assets/fundoNormal.png');
+        transition: 0.8s;
+        cursor: crosshair;
+        box-shadow: rgba(190, 221, 211, 0.426) 10px 10px;
+        transform: rotate3d(40,-30,30,45deg);
+    }
+    
+    .iCard h4{
+        text-align: center;
+        text-decoration:underline;
+        background-color: rgb(42, 40, 40);
+        margin: auto;
+        width: fit-content;
+        padding: 10px;
+        box-shadow: rgb(101, 97, 97) 2px 2px;
+        border-end-end-radius: 10px;
+    }
+    
+    .iCard figure img, figure{
+        height: 50px;
+        width: 50px;
+        display:block;
+        border: whitesmoke groove 2px;
+        transition: 0.25s;
+        margin: auto;
+    }
+
+    .iCard hr{
+        display: none;
+    }
+}
+/*LAPTOP E CIA*/
+@media screen and (max-width:700px) and (min-width:500px){
+    #logoElf{
+        display: inline-flex;
+        position: absolute;
+        width: 100px;
+        top: 5%;
+        left: 5px;
+    }
+}
+
+@media  screen and (min-width: 501px) {
+    .modal_content{
+        text-align: center;
+        margin: auto;
+        max-width: 420px;
+        height: 100%;
+        border: rgb(53, 48, 48) 2px dashed;
+        box-shadow: rgb(40, 36, 36) 0px 10px 15px;
+        background-color: beige;
+        overflow-y: auto;
+    }
+    div#root{
+        background-color:rgb(49, 49, 49) ;
+        border: solid 1px rgb(27, 25, 25);
+        border-radius: 20px;
+        min-height: 400px;
+        height: fit-content;
+        box-shadow: 5px 5px rgb(28, 26, 26);
+        margin: 10px;
+        text-align: center;
+    }
+    #here{
+        color: whitesmoke;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-shadow: black 2px 5px 3px;
+    }
+    #logoElf{
+        display:inline-flex;
+        position:absolute;
+        width: 20%;
+        left: 0px;
+    }
+    button.bttnOpt{
+        padding: 10px;
+        margin: 5px;
+    }
+    body{
+        background-color: rgb(35, 34, 34);
+        cursor:grab;
+        max-height: 250px;
+        width: 850px;
+        width: fit-content;
+        text-align: center;
+        margin: auto;
+    }
+    .cardDiv{
+        margin: 10px;
+        border: white solid 1px;
+        padding: 5px;
+        height: 350px;
+        width: 800px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scrollbar-color: yellow;
+        display: inline-block;
+    }
+    .iCard{
+        border-radius: 10px;
+        border: white solid 0.5px;
+        box-shadow: rgb(0, 0, 0) 10px 10px 10px -10px;
+        width: 150px;
+        height: 200px;
+        display: inline-block;
+        margin: 20px;
+        color: whitesmoke;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url("./assets/fundoNegativo.png");
+        background-size: cover;
+        transition: 0.5s;
+    }
+    
+    .iCard:hover{
+        background: url('./assets/fundoNormal.png');
+        transform: rotateX(30deg);
+        rotate: 10deg;
+        transition: 0.8s;
+        cursor: crosshair;
+        box-shadow: rgba(190, 221, 211, 0.426) 10px 10px;
+    
+    }
+    
+    .iCard h4{
+        text-align: center;
+        text-decoration:underline;
+        background-color: rgb(42, 40, 40);
+        margin: auto;
+        width: fit-content;
+        padding: 10px;
+        box-shadow: rgb(101, 97, 97) 2px 2px;
+        border-end-end-radius: 10px;
+    }
+    
+    .iCard figure img{
+        max-height: 100%;
+        max-width: 100%;
+        border: whitesmoke groove 2px;
+        transition: 0.25s;
+    }
+    
+}
+
+
+
+/*
+==> Container dos Detalhes das cartas
+*As informações mudam com base no clique da carta
+*/
+
+.modalMenu{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/*
+==>Modal Attrs
+*/
+
+
+/*
+Modal bttns
+*/
+
+.exitModal,.optModal{
+    width: 100px;
+    height: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: dashed black 3px;
+    text-align: center;
+    margin: auto;
+
+}
+
+
+
+.exitModal:hover,.optModal:hover{
+    transform: rotateX(-30deg);
+    background: linear-gradient(rgb(245, 2, 2),rgb(80, 1, 1));
+    color: antiquewhite;
+    transition: 0.5s;
+}
+
+.optModal{
+    display: inline-block;
+    border: solid 1px black;
+    border-end-end-radius: 10px;
+}
+
+
+
+button.optModal{
+    width: 100%;
+    padding: 2px;
+}
+
+.attrTable{
+    background: linear-gradient(rgb(54, 50, 50),rgb(92, 79, 79));
+    box-shadow: rgb(237, 237, 202) 0px 10px 10px;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    border: 3px black double;
+}
+
+.attrTable table{
+    overflow-y: scroll;
+    max-width: 300px;
+    height: 300px;
+}
+
+
+.trAttr td{
+    border: solid 1px black;
+    cursor: pointer;
+    transition: 0.5s;
+    max-width: 200px;
+    overflow-y: auto;
+    background-color:rgb(255, 247, 234);
+    border-radius: 3px;
+}
+
+td.material-symbols-outlined{
+    padding: 3px;
+    width: fit-content;
+}
+
+.trAttr td:hover{
+    border: solid 1px rgb(255, 0, 0);
+    transition: 0.5s;
+    background-color: antiquewhite;
+    border-radius:30px ;
+}
