@@ -1,0 +1,57 @@
+import BttnOpt from "./BttnOpt.jsx"
+import ICard from "./ICard.jsx"
+import ModalMenu from "./ModalMenu.jsx"
+import React, { useState } from "react";
+
+
+
+function App() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [tokenAttrs, setTokenAttrs] = useState({"cardName" : '',"attrs" : []})
+  /*
+    //token example
+    {
+        cardName:"",
+        img:"",
+        attrs:[{attrName:"foo",attrValue:""}]
+    }
+  */
+  const globalAttr = {
+    tokens : [
+      {
+        key:"0",
+        cardName:"Tiamat",
+        img:"../public/Elfo_Negro.png",
+        attrs:[{attrId:"0",attrName:"Vida",attrValue:"10000"}]
+      },
+      {
+        key:"1",
+        cardName:"Tiamat",
+        img:"/Elfo_Negro.png",
+        attrs:[{attrId:"0",attrName:"Vida",attrValue:"100"}]
+      }
+    ]
+  }
+
+
+  return (
+    <>
+    <BttnOpt actionName='Criar'/>
+    <BttnOpt actionName='Excluir'/>
+    <BttnOpt actionName='Importar'/>
+    <BttnOpt actionName='Exportar'/>
+
+    <section>
+    <div className='cardDiv'>
+      {globalAttr.tokens.map((token) => <ICard cardName = {token.cardName} img = {token.img} key={token.key} setIsOpen={setIsOpen} modalSet={setTokenAttrs} attrs={token.attrs}/>)}
+      
+    </div>
+
+    </section>
+    
+    {isOpen && <ModalMenu setIsOpen={setIsOpen} tokenAttrs={tokenAttrs} changeTokenAttrs={setTokenAttrs} glbStats={globalAttr}/>}
+    </>
+  )
+}
+
+export default App
